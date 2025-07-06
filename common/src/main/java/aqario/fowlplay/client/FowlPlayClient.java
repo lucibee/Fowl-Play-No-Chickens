@@ -3,16 +3,13 @@ package aqario.fowlplay.client;
 import aqario.fowlplay.client.render.debug.BirdDebugRenderer;
 import aqario.fowlplay.client.render.entity.*;
 import aqario.fowlplay.client.render.entity.model.*;
-import aqario.fowlplay.common.config.FowlPlayConfig;
 import aqario.fowlplay.common.network.s2c.DebugBirdCustomPayload;
 import aqario.fowlplay.core.FowlPlay;
 import aqario.fowlplay.core.FowlPlayEntityType;
-import com.google.common.base.Suppliers;
 import dev.architectury.networking.NetworkManager;
 import dev.architectury.registry.client.level.entity.EntityModelLayerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import io.github.flemmli97.debugutils.api.RegisterDebugRenderers;
-import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 
 @SuppressWarnings("unused")
@@ -52,10 +49,6 @@ public class FowlPlayClient {
         EntityModelLayerRegistry.register(RobinEntityModel.MODEL_LAYER, RobinEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.register(SparrowEntityModel.MODEL_LAYER, SparrowEntityModel::getTexturedModelData);
 
-        if(FowlPlayConfig.getInstance().customChickenModel) {
-            EntityModelLayerRegistry.register(CustomChickenEntityModel.MODEL_LAYER, CustomChickenEntityModel::getTexturedModelData);
-            EntityModelLayerRegistry.register(CustomBabyChickenEntityModel.MODEL_LAYER, CustomBabyChickenEntityModel::getTexturedModelData);
-        }
     }
 
     public static void registerEntityRenderers() {
@@ -71,10 +64,6 @@ public class FowlPlayClient {
         EntityRendererRegistry.register(FowlPlayEntityType.RAVEN, RavenEntityRenderer::new);
         EntityRendererRegistry.register(FowlPlayEntityType.ROBIN, RobinEntityRenderer::new);
         EntityRendererRegistry.register(FowlPlayEntityType.SPARROW, SparrowEntityRenderer::new);
-
-        if(FowlPlayConfig.getInstance().customChickenModel) {
-            EntityRendererRegistry.register(Suppliers.ofInstance(EntityType.CHICKEN), CustomChickenEntityRenderer::new);
-        }
     }
 
     // TODO: Fix cross-platform particle registration

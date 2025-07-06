@@ -18,9 +18,6 @@ public class FowlPlayConfig {
 
     // Visual
 
-    @SerialEntry
-    public boolean customChickenModel = true;
-
     // Audio
 
     // Blue Jay

@@ -30,7 +30,6 @@ public class FowlPlay {
     }
 
     public static void init() {
-        ChickenVariant.init();
         DuckVariant.init();
         GullVariant.init();
         PigeonVariant.init();

@@ -11,10 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 public final class FowlPlayTrackedDataHandlerRegistry {
-    public static final TrackedDataHandler<RegistryEntry<ChickenVariant>> CHICKEN_VARIANT = register(
-        "chicken_variant",
-        TrackedDataHandler.create(ChickenVariant.PACKET_CODEC)
-    );
+
     public static final TrackedDataHandler<RegistryEntry<DuckVariant>> DUCK_VARIANT = register(
         "duck_variant",
         TrackedDataHandler.create(DuckVariant.PACKET_CODEC)

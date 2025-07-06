@@ -30,7 +30,6 @@ public final class FowlPlayNeoForge {
         modBus.addListener(FowlPlayNeoForge::onSetup);
         modBus.addListener(FowlPlayNeoForge::onAddItemGroupEntries);
 
-        PlatformHelperImpl.CHICKEN_VARIANTS.register(modBus);
         PlatformHelperImpl.DUCK_VARIANTS.register(modBus);
         PlatformHelperImpl.GULL_VARIANTS.register(modBus);
         PlatformHelperImpl.PIGEON_VARIANTS.register(modBus);

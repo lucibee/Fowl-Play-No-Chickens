@@ -34,10 +34,6 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public class PlatformHelperImpl {
     public static final Object2ObjectOpenHashMap<Supplier<Item>, RegistryKey<ItemGroup>> ITEM_TO_GROUPS = new Object2ObjectOpenHashMap<>();
-    public static final DeferredRegister<ChickenVariant> CHICKEN_VARIANTS = DeferredRegister.create(
-        FowlPlayRegistryKeys.CHICKEN_VARIANT,
-        FowlPlay.ID
-    );
     public static final DeferredRegister<DuckVariant> DUCK_VARIANTS = DeferredRegister.create(
         FowlPlayRegistryKeys.DUCK_VARIANT,
         FowlPlay.ID
@@ -89,10 +85,7 @@ public class PlatformHelperImpl {
 
     @SuppressWarnings("unchecked")
     public static <T> void registerVariant(String id, RegistryKey<T> key, Supplier<T> variant) {
-        if(key.isOf(FowlPlayRegistryKeys.CHICKEN_VARIANT)) {
-            CHICKEN_VARIANTS.register(id, (Supplier<ChickenVariant>) variant);
-        }
-        else if(key.isOf(FowlPlayRegistryKeys.DUCK_VARIANT)) {
+        if(key.isOf(FowlPlayRegistryKeys.DUCK_VARIANT)) {
             DUCK_VARIANTS.register(id, (Supplier<DuckVariant>) variant);
         }
         else if(key.isOf(FowlPlayRegistryKeys.GULL_VARIANT)) {

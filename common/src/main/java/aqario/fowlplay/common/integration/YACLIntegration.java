@@ -4,7 +4,6 @@ import aqario.fowlplay.common.config.FowlPlayConfig;
 import aqario.fowlplay.core.FowlPlay;
 import dev.architectury.platform.Platform;
 import dev.isxander.yacl3.api.*;
-import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
 import dev.isxander.yacl3.api.controller.IntegerSliderControllerBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
@@ -27,17 +26,7 @@ public class YACLIntegration {
     public static Screen createScreen(Screen parent) {
         return YetAnotherConfigLib.create(HANDLED_CONFIG, (defaults, config, builder) -> builder
                 .title(Text.translatable("config.title"))
-                .category(ConfigCategory.createBuilder()
-                    .name(Text.translatable("config.visual"))
-                    .option(Option.<Boolean>createBuilder()
-                        .name(Text.translatable("config.visual.customChickenModel"))
-                        .description(OptionDescription.of(Text.translatable("config.info.restart").append("\n\n").append(Text.translatable("config.visual.customChickenModel.desc"))))
-                        .binding(true, () -> config.customChickenModel, val -> config.customChickenModel = val)
-                        .controller(BooleanControllerBuilder::create)
-                        .build()
-                    )
-                    .build()
-                )
+
                 .category(ConfigCategory.createBuilder()
                     .name(Text.translatable("config.audio"))
                     .group(createSoundGroup(

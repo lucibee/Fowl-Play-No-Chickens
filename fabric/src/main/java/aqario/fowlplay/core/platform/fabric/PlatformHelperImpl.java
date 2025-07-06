@@ -38,10 +38,8 @@ import java.util.function.Supplier;
 public class PlatformHelperImpl {
     @SuppressWarnings("unchecked")
     public static <T> void registerVariant(String id, RegistryKey<T> key, Supplier<T> variant) {
-        if(key.isOf(FowlPlayRegistryKeys.CHICKEN_VARIANT)) {
-            Registry.register(FowlPlayRegistries.CHICKEN_VARIANT, (RegistryKey<ChickenVariant>) key, (ChickenVariant) variant.get());
-        }
-        else if(key.isOf(FowlPlayRegistryKeys.DUCK_VARIANT)) {
+
+        if(key.isOf(FowlPlayRegistryKeys.DUCK_VARIANT)) {
             Registry.register(FowlPlayRegistries.DUCK_VARIANT, (RegistryKey<DuckVariant>) key, (DuckVariant) variant.get());
         }
         else if(key.isOf(FowlPlayRegistryKeys.GULL_VARIANT)) {

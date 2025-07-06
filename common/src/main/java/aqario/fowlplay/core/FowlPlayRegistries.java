@@ -5,10 +5,7 @@ import aqario.fowlplay.common.util.RegistryBuilder;
 import net.minecraft.registry.Registry;
 
 public class FowlPlayRegistries {
-    public static final Registry<ChickenVariant> CHICKEN_VARIANT = RegistryBuilder
-        .create(FowlPlayRegistryKeys.CHICKEN_VARIANT)
-        .sync()
-        .buildAndRegister();
+
     public static final Registry<DuckVariant> DUCK_VARIANT = RegistryBuilder
         .create(FowlPlayRegistryKeys.DUCK_VARIANT)
         .sync()
